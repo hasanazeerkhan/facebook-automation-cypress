@@ -1,0 +1,22 @@
+{
+  "name": "facebook-login-automation-cypress",
+  "version": "1.0.0",
+  "description": "A Cypress-based automation tool for logging in to Facebook accounts. This repository contains scripts to automate the login process using JavaScript, demonstrating best practices in test automation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasanazeerkhan/facebook-login-automation-cypress.git"
+  },
+  "author": "Mohammed Hasan N",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hasanazeerkhan/facebook-login-automation-cypress/issues"
+  },
+  "homepage": "https://github.com/hasanazeerkhan/facebook-login-automation-cypress#readme",
+  "devDependencies": {
+    "cypress": "^13.14.2"
+  }
+}
