@@ -1,41 +1,18 @@
-const account = {
-  firstName: "MyFirst",
-  lastName: "MyLast",
-  mobileNumber: "+910000000000",
-  password: "MySecretPassword",
-  dayInDob: "10",
-  monthInDob: "Dec",
-  yearInDob: "1999",
-  gender: "Male",
-};
-const facebook = {
-  landingPage: {
-    createNewAccount: `[data-testid="open-registration-form-button"]`,
-  },
-  signUp: {
-    firstName: `input[name="firstname"]`,
-    lastName: `input[name="lastname"]`,
-    mobileNumber: `input[name="reg_email__"]`,
-    password: `input[data-type="password"]`,
-    dayInDob: `select[name="birthday_day"]`,
-    monthInDob: `select[name="birthday_month"]`,
-    yearInDob: `select[name="birthday_year"]`,
-    signUp: 'button[type="submit"][name="websubmit"]',
-  },
-};
+import { account } from "../support/credentials";
+import { elements } from "../support/webElements";
 
 describe("Facebook", function () {
   it("Create new account", function () {
     cy.visit("https://www.facebook.com/");
     cy.get(".fcb > a").click();
-    cy.get(facebook.landingPage.createNewAccount).click();
-    cy.get(facebook.signUp.firstName).type(account.firstName);
-    cy.get(facebook.signUp.lastName).type(account.lastName);
-    cy.get(facebook.signUp.monthInDob).type(account.monthInDob);
-    cy.get(facebook.signUp.dayInDob).select(account.dayInDob);
-    cy.get(facebook.signUp.yearInDob).select(account.yearInDob);
-    cy.get(facebook.signUp.mobileNumber).type(account.mobileNumber);
-    cy.get(facebook.signUp.password).type(account.password);
+    cy.get(elements.homePage.createNewAccount).click();
+    cy.get(elements.signUp.firstName).type(account.firstName);
+    cy.get(elements.signUp.lastName).type(account.lastName);
+    cy.get(elements.signUp.monthInDob).type(account.monthInDob);
+    cy.get(elements.signUp.dayInDob).select(account.dayInDob);
+    cy.get(elements.signUp.yearInDob).select(account.yearInDob);
+    cy.get(elements.signUp.mobileNumber).type(account.mobileNumber);
+    cy.get(elements.signUp.password).type(account.password);
     {
       var selectableGender = account.gender;
       var j = 1;
@@ -56,7 +33,7 @@ describe("Facebook", function () {
     cy.get(
       `span[data-name="gender_wrapper"] span label input[value="${j}"]`
     ).click();
-    cy.get(facebook.signUp.signUp).click();
+    cy.get(elements.signUp.signUp).click();
   });
   it("Sign up", function () {});
 });
